@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peruvian Turmeric — Good Hope Produce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C8860A;
+    --gold-light: #F0A500;
+    --gold-pale: #FDF3DC;
+    --dark: #1A1208;
+    --earth: #6B4A1E;
+    --cream: #FAF6EE;
+    --white: #FFFFFF;
+    --green: #1B3A2A;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(26, 18, 8, 0.85);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 640px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 0 80px 80px;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=1800&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 8s ease-out forwards;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(26,18,8,0.82) 0%,
+      rgba(26,18,8,0.55) 50%,
+      rgba(26,18,8,0.2) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(64px, 8vw, 110px);
+    font-weight: 300;
+    line-height: 0.9;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    font-style: italic;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+    max-width: 420px;
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: rgba(255,255,255,0.3);
+    animation: scrollLine 1.5s ease infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(0.5); }
+  }
+
+  /* ── CERTIFICATIONS BAR ── */
+  .cert-bar {
+    background: var(--green);
+    padding: 18px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+
+  .cert-item {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    padding: 4px 20px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .cert-item:last-child { border-right: none; }
+
+  /* ── INTRO SECTION ── */
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 520px;
+  }
+
+  .intro-text {
+    padding: 80px 64px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .intro-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--dark);
+    margin-bottom: 28px;
+  }
+
+  .intro-text h2 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .intro-text p {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4A3520;
+    margin-bottom: 16px;
+  }
+
+  .intro-img {
+    background: url('https://images.unsplash.com/photo-1599420186946-7b6fb4e297f0?w=900&q=80') center/cover no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .intro-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(250,246,238,0.15) 0%, transparent 30%);
+  }
+
+  /* ── HARVESTING GALLERY ── */
+  .gallery {
+    padding: 80px;
+    background: var(--dark);
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 48px;
+  }
+
+  .gallery-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 44px;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .gallery-header p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em;
+    max-width: 280px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .gallery-item:first-child {
+    grid-row: 1 / 3;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    background: rgba(26,18,8,0.6);
+    padding: 5px 10px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* ── BUYER PITCH ── */
+  .buyer-pitch {
+    padding: 100px 80px;
+    background: var(--gold-pale);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .buyer-pitch::before {
+    content: 'TURMERIC';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 140px;
+    font-weight: 300;
+    color: rgba(200, 134, 10, 0.06);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .pitch-inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .pitch-stat-col {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .pitch-stat {
+    border-top: 1px solid rgba(200,134,10,0.3);
+    padding-top: 20px;
+  }
+
+  .pitch-stat .number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .pitch-stat .label {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--earth);
+  }
+
+  .pitch-copy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 50px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 32px;
+  }
+
+  .pitch-copy h2 em { font-style: italic; color: var(--gold); }
+
+  .pitch-copy p {
+    font-family: 'Lora', serif;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #4A3520;
+    margin-bottom: 20px;
+  }
+
+  .pitch-copy p strong { font-weight: 500; color: var(--dark); }
+
+  /* ── SPECS TABLE ── */
+  .specs {
+    padding: 80px;
+    background: var(--white);
+  }
+
+  .specs-header {
+    margin-bottom: 48px;
+  }
+
+  .specs-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+
+  .specs-header p {
+    font-size: 13px;
+    color: #888;
+    letter-spacing: 0.05em;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    border: 1px solid #E8E0D0;
+  }
+
+  .spec-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid #E8E0D0;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+
+  .spec-row:nth-child(odd) { background: #FAFAF8; }
+
+  .spec-key {
+    padding: 16px 20px;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-right: 1px solid #E8E0D0;
+    font-weight: 500;
+  }
+
+  .spec-val {
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--dark);
+    line-height: 1.4;
+  }
+
+  /* ── DATASHEET CTA ── */
+  .datasheet {
+    padding: 80px;
+    background: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .datasheet-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .datasheet-text p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  .btn-datasheet {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--gold);
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    white-space: nowrap;
+    transition: background 0.2s, gap 0.2s;
+  }
+
+  .btn-datasheet:hover {
+    background: var(--gold-light);
+    gap: 20px;
+  }
+
+  .btn-datasheet svg { width: 18px; height: 18px; }
+
+  /* ── INQUIRY CTA ── */
+  .inquiry {
+    padding: 80px;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .inquiry h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark);
+  }
+
+  .inquiry h2 em { font-style: italic; color: var(--gold); }
+
+  .inquiry-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .inquiry-detail p {
+    font-size: 14px;
+    color: #6B5A3E;
+    line-height: 1.7;
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 16px 32px;
+    width: fit-content;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover {
+    background: var(--gold);
+    color: var(--dark);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    padding: 40px 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  footer p {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 28px;
+  }
+
+  .footer-nav a {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover { color: var(--gold-light); }
+
+  /* ── PRODUCT NAV ── */
+  .product-nav {
+    background: var(--cream);
+    padding: 40px 80px;
+    border-top: 1px solid #E8E0D0;
+  }
+
+  .product-nav-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #AAA;
+    margin-bottom: 20px;
+  }
+
+  .product-links {
+    display: flex;
+    gap: 0;
+  }
+
+  .product-link {
+    flex: 1;
+    padding: 24px 28px;
+    border: 1px solid #E8E0D0;
+    border-right: none;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .product-link:last-child { border-right: 1px solid #E8E0D0; }
+
+  .product-link:hover { background: var(--white); }
+
+  .product-link .pl-tag {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #AAA;
+    margin-bottom: 6px;
+  }
+
+  .product-link .pl-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--dark);
+  }
+
+  .product-link.active .pl-name { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .hero { padding: 0 0 60px 32px; }
+    .section-intro { grid-template-columns: 1fr; }
+    .intro-img { height: 360px; }
+    .gallery { padding: 40px 24px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: auto; grid-column: 1 / 3; }
+    .buyer-pitch, .specs, .datasheet, .inquiry, footer { padding: 48px 24px; }
+    .pitch-inner { grid-template-columns: 1fr; gap: 40px; }
+    .datasheet { flex-direction: column; align-items: flex-start; }
+    .inquiry { grid-template-columns: 1fr; }
+    .product-nav { padding: 32px 24px; }
+    .intro-text { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-brand">Good Hope Produce</a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Certifications</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Good Hope Produce · Peru</div>
+    <h1>Peruvian<br><em>Turmeric</em></h1>
+    <p class="hero-sub">Curcuma longa from Peru's highland growing regions — high curcumin content, fully certified, export-ready.</p>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- CERT BAR -->
+<div class="cert-bar">
+  <div class="cert-item">Certified Organic</div>
+  <div class="cert-item">GlobalG.A.P.</div>
+  <div class="cert-item">GRASP Verified</div>
+  <div class="cert-item">USDA NOP</div>
+  <div class="cert-item">EU Organic Reg. 2018/848</div>
+  <div class="cert-item">Canada Organic COR</div>
+  <div class="cert-item">Certified by Kiwa</div>
+</div>
+
+<!-- INTRO -->
+<section class="section-intro">
+  <div class="intro-text">
+    <div class="section-label">The Product</div>
+    <h2>Altitude-grown.<br><em>Consistently high</em><br>curcumin content.</h2>
+    <p>Peruvian turmeric is cultivated in Peru's highland growing regions, where cool nights and mineral-rich soils produce roots with exceptional curcumin concentration and a clean, earthy aroma profile. For food formulators and nutraceutical manufacturers, consistency is the product — and Good Hope Produce delivers it at scale.</p>
+    <p>Available as fresh whole root, dried slices, and dried whole root. Organic and conventional grades. Export packaging to EU, US, and Canadian import standards.</p>
+  </div>
+  <div class="intro-img"></div>
+</section>
+
+<!-- HARVESTING GALLERY -->
+<section class="gallery">
+  <div class="gallery-header">
+    <h2>From field<br>to container.</h2>
+    <p>Every step documented. Full chain-of-custody from farm harvest through export certification.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=900&q=80" alt="Turmeric root harvest">
+      <div class="gallery-item-label">Harvest — Highland Region, Peru</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" alt="Turmeric roots">
+      <div class="gallery-item-label">Fresh Root Selection</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1607305387299-a3d9611cd469?w=600&q=80" alt="Turmeric powder">
+      <div class="gallery-item-label">Processing & Grading</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Export packaging">
+      <div class="gallery-item-label">Export Packaging</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1573414406286-fe27e68890ca?w=600&q=80" alt="Certification documentation">
+      <div class="gallery-item-label">Traceability Documentation</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUYER PITCH -->
+<section class="buyer-pitch">
+  <div class="pitch-inner">
+    <div class="pitch-stat-col">
+      <div class="pitch-stat">
+        <div class="number">3+</div>
+        <div class="label">Certified Growing Regions</div>
+      </div>
+      <div class="pitch-stat">
+        <div class="number">6</div>
+        <div class="label">Active Export Certifications</div>
+      </div>
+      <div class="pitch-stat">
+        <div class="number">EU · US · CA</div>
+        <div class="label">Approved Destination Markets</div>
+      </div>
+    </div>
+    <div class="pitch-copy">
+      <div class="section-label">Why Peruvian Turmeric</div>
+      <h2>Your quality control<br>starts before the<br><em>shipment arrives.</em></h2>
+      <p>Procurement teams sourcing turmeric at volume face one consistent problem: variability. Curcumin levels fluctuate by region and season, and documentation gaps at origin create compliance exposure in regulated markets. <strong>Our certified supply chain is designed to eliminate both.</strong></p>
+      <p>Our certified supply chain runs from verified highland farms through GlobalG.A.P.-compliant post-harvest handling to export-ready container loading — with full traceability documentation at every step. The result is a product your lab will confirm, your auditors will approve, and your operations team won't have to chase.</p>
+      <p>We work with food manufacturers, nutraceutical brands, and B2B distributors with minimum order volumes suitable for industrial supply arrangements. If your procurement cycle requires consistency, certification, and a supply partner who responds within one business day — we're the right conversation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs">
+  <div class="specs-header">
+    <div class="section-label">Technical Specifications</div>
+    <h2>Product Parameters</h2>
+    <p>Full technical datasheet available for download below. Key parameters summarized here.</p>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-row"><div class="spec-key">Botanical Name</div><div class="spec-val">Curcuma longa L.</div></div>
+    <div class="spec-row"><div class="spec-key">Origin</div><div class="spec-val">Peru — Highland Growing Regions</div></div>
+    <div class="spec-row"><div class="spec-key">Forms Available</div><div class="spec-val">Fresh whole root · Dried slices · Dried whole root</div></div>
+    <div class="spec-row"><div class="spec-key">Curcumin Content</div><div class="spec-val">≥ 3.0% (dry basis, per specification)</div></div>
+    <div class="spec-row"><div class="spec-key">Moisture (dried)</div><div class="spec-val">≤ 10%</div></div>
+    <div class="spec-row"><div class="spec-key">Ash Content</div><div class="spec-val">≤ 8.0%</div></div>
+    <div class="spec-row"><div class="spec-key">Grades Available</div><div class="spec-val">Certified Organic · Conventional</div></div>
+    <div class="spec-row"><div class="spec-key">Certifications</div><div class="spec-val">USDA NOP · EU Organic · Canada Organic (COR) · GlobalG.A.P. · GRASP · Kiwa</div></div>
+    <div class="spec-row"><div class="spec-key">Packaging</div><div class="spec-val">Export cartons / bulk bags — to buyer specification</div></div>
+    <div class="spec-row"><div class="spec-key">Shelf Life (dried)</div><div class="spec-val">18 months from production date, stored ≤ 25°C, RH ≤ 65%</div></div>
+    <div class="spec-row"><div class="spec-key">Minimum Order</div><div class="spec-val">Contact for current availability and MOQ</div></div>
+    <div class="spec-row"><div class="spec-key">Lead Time</div><div class="spec-val">Contact for current season schedule</div></div>
+  </div>
+</section>
+
+<!-- DATASHEET CTA -->
+<section class="datasheet">
+  <div class="datasheet-text">
+    <div class="section-label" style="color: rgba(240,165,0,0.7); margin-bottom:12px;">Technical Documentation</div>
+    <h2>Download the Peruvian Turmeric<br>Product Data Sheet</h2>
+    <p>Full technical specifications, quality parameters, certificate of analysis template, packaging options, and regulatory documentation for EU, US, and Canadian import compliance.</p>
+  </div>
+  <a href="turmeric-datasheet.pdf" class="btn-datasheet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+    </svg>
+    Download Data Sheet
+  </a>
+</section>
+
+<!-- INQUIRY CTA -->
+<section class="inquiry">
+  <h2>Ready to<br><em>source</em><br>Peruvian Turmeric?</h2>
+  <div class="inquiry-detail">
+    <p>We work with importers, food manufacturers, nutraceutical brands, and distributors at volume. Tell us your product interest, grade preference, estimated annual volume, and country of import. We respond within one business day.</p>
+    <p style="font-size:13px; color:#AAA;">Good Hope Produce · Lima, Peru · info@goodhopeproduce.com</p>
+    <a href="mailto:info@goodhopeproduce.com" class="btn-outline">
+      Send Inquiry →
+    </a>
+  </div>
+</section>
+
+<!-- PRODUCT NAV -->
+<div class="product-nav">
+  <div class="product-nav-label">Also from Good Hope Produce</div>
+  <div class="product-links">
+    <a href="turmeric.html" class="product-link active">
+      <div class="pl-tag">Currently viewing</div>
+      <div class="pl-name">Peruvian Turmeric</div>
+    </a>
+    <a href="mandarins.html" class="product-link">
+      <div class="pl-tag">View product →</div>
+      <div class="pl-name">Peruvian Mandarins</div>
+    </a>
+    <a href="ginger.html" class="product-link">
+      <div class="pl-tag">View product →</div>
+      <div class="pl-name">Peruvian Ginger</div>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Inversiones Good Hope SAC · Lima, Peru · All rights reserved</p>
+  <nav class="footer-nav">
+    <a href="#">Products</a>
+    <a href="#">Certifications</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </nav>
+</footer>
+
+</body>
+</html>

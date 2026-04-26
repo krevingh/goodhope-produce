@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peruvian Mandarins — Good Hope Produce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #D4630A;
+    --orange-light: #F07820;
+    --orange-pale: #FEF4EC;
+    --dark: #0E1A10;
+    --forest: #1B3A2A;
+    --grove: #2D5A3D;
+    --cream: #F8FAF5;
+    --white: #FFFFFF;
+    --text: #1E2E20;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    background: rgba(14, 26, 16, 0.88);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: #8DC878;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #8DC878; }
+
+  /* HERO */
+  .hero {
+    position: relative; height: 100vh; min-height: 640px;
+    overflow: hidden; display: flex; align-items: flex-end;
+    padding: 0 0 80px 80px;
+  }
+
+  .hero-img {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1564502804881-26f5c10d6a2c?w=1800&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 8s ease-out forwards;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      120deg,
+      rgba(14,26,16,0.85) 0%,
+      rgba(14,26,16,0.55) 45%,
+      rgba(14,26,16,0.15) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 560px; text-align: right;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #8DC878; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .hero-tag::before {
+    content: ''; display: block; width: 32px; height: 1px; background: #8DC878;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(64px, 8vw, 110px);
+    font-weight: 300; line-height: 0.9;
+    color: var(--white); letter-spacing: -0.02em; margin-bottom: 28px;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--orange-light); }
+
+  .hero-sub {
+    font-family: 'Lora', serif; font-size: 17px; font-style: italic;
+    color: rgba(255,255,255,0.8); line-height: 1.6;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 40px; right: 60px; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 10px; color: rgba(255,255,255,0.5); font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  .hero-scroll::after {
+    content: ''; display: block; width: 1px; height: 48px;
+    background: rgba(255,255,255,0.3);
+    animation: scrollLine 1.5s ease infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* CERT BAR */
+  .cert-bar {
+    background: var(--grove); padding: 18px 48px;
+    display: flex; justify-content: center; align-items: center;
+    gap: 0; flex-wrap: wrap;
+  }
+
+  .cert-item {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.75); padding: 4px 20px;
+    border-right: 1px solid rgba(255,255,255,0.2);
+  }
+  .cert-item:last-child { border-right: none; }
+
+  /* INTRO */
+  .section-intro {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 520px;
+  }
+
+  .intro-img {
+    background: url('https://images.unsplash.com/photo-1600189490681-4d05478e5a24?w=900&q=80') center/cover no-repeat;
+    
+  }
+
+  .intro-text {
+    padding: 80px 80px 80px 64px;
+    display: flex; flex-direction: column; justify-content: center;
+    background: var(--white);
+  }
+
+  .section-label {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--orange); margin-bottom: 24px;
+  }
+
+  .intro-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px); font-weight: 300;
+    line-height: 1.15; color: var(--text); margin-bottom: 28px;
+  }
+
+  .intro-text h2 em { font-style: italic; color: var(--orange); }
+
+  .intro-text p {
+    font-family: 'Lora', serif; font-size: 16px;
+    line-height: 1.8; color: #3A4A3C; margin-bottom: 16px;
+  }
+
+  /* GALLERY */
+  .gallery {
+    padding: 80px; background: var(--forest);
+  }
+
+  .gallery-header {
+    display: flex; justify-content: space-between;
+    align-items: baseline; margin-bottom: 48px;
+  }
+
+  .gallery-header h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 44px;
+    font-weight: 300; color: var(--white);
+  }
+
+  .gallery-header p {
+    font-size: 13px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.05em; max-width: 280px;
+    text-align: right; line-height: 1.6;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+  }
+
+  .gallery-item { overflow: hidden; position: relative; }
+  .gallery-item:nth-child(2) { grid-row: 1 / 3; }
+
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease; display: block;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-label {
+    position: absolute; bottom: 16px; left: 16px;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); background: rgba(14,26,16,0.6);
+    padding: 5px 10px; backdrop-filter: blur(4px);
+  }
+
+  /* BUYER PITCH */
+  .buyer-pitch {
+    padding: 100px 80px; background: var(--orange-pale);
+    position: relative; overflow: hidden;
+  }
+
+  .buyer-pitch::before {
+    content: 'CITRUS';
+    position: absolute; left: -20px; top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 160px; font-weight: 300;
+    color: rgba(212, 99, 10, 0.06); letter-spacing: 0.1em;
+    white-space: nowrap; pointer-events: none;
+  }
+
+  .pitch-inner {
+    display: grid; grid-template-columns: 1fr 2fr;
+    gap: 80px; align-items: start;
+  }
+
+  .pitch-copy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 50px); font-weight: 300;
+    line-height: 1.2; color: var(--text); margin-bottom: 32px;
+  }
+
+  .pitch-copy h2 em { font-style: italic; color: var(--orange); }
+
+  .pitch-copy p {
+    font-family: 'Lora', serif; font-size: 16px;
+    line-height: 1.85; color: #3A4A3C; margin-bottom: 20px;
+  }
+
+  .pitch-copy p strong { font-weight: 500; color: var(--text); }
+
+  .pitch-stat-col {
+    display: flex; flex-direction: column; gap: 48px;
+  }
+
+  .pitch-stat { border-top: 1px solid rgba(212,99,10,0.3); padding-top: 20px; }
+
+  .pitch-stat .number {
+    font-family: 'Cormorant Garamond', serif; font-size: 52px;
+    font-weight: 300; color: var(--orange); line-height: 1; margin-bottom: 6px;
+  }
+
+  .pitch-stat .label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #5A6A5C;
+  }
+
+  /* SPECS */
+  .specs {
+    padding: 80px; background: var(--white);
+  }
+
+  .specs-header { margin-bottom: 48px; }
+
+  .specs-header h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 40px;
+    font-weight: 300; color: var(--text); margin-bottom: 8px;
+  }
+
+  .specs-header p { font-size: 13px; color: #888; letter-spacing: 0.05em; }
+
+  .specs-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0; border: 1px solid #E0EAE2;
+  }
+
+  .spec-row {
+    display: grid; grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid #E0EAE2;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+  .spec-row:nth-child(odd) { background: #F8FAF5; }
+
+  .spec-key {
+    padding: 16px 20px; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--orange);
+    border-right: 1px solid #E0EAE2; font-weight: 500;
+  }
+
+  .spec-val { padding: 16px 20px; font-size: 14px; color: var(--text); line-height: 1.4; }
+
+  /* DATASHEET */
+  .datasheet {
+    padding: 80px; background: var(--forest);
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 48px;
+  }
+
+  .datasheet-text h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 40px;
+    font-weight: 300; color: var(--white); margin-bottom: 12px;
+  }
+
+  .datasheet-text p {
+    font-size: 14px; color: rgba(255,255,255,0.6);
+    line-height: 1.6; max-width: 480px;
+  }
+
+  .btn-datasheet {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: var(--orange); color: var(--white);
+    text-decoration: none; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 18px 36px; white-space: nowrap;
+    transition: background 0.2s, gap 0.2s;
+  }
+
+  .btn-datasheet:hover { background: var(--orange-light); gap: 20px; }
+  .btn-datasheet svg { width: 18px; height: 18px; }
+
+  /* INQUIRY */
+  .inquiry {
+    padding: 80px; background: var(--cream);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+
+  .inquiry h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px); font-weight: 300;
+    line-height: 1.1; color: var(--text);
+  }
+
+  .inquiry h2 em { font-style: italic; color: var(--orange); }
+
+  .inquiry-detail { display: flex; flex-direction: column; gap: 24px; }
+
+  .inquiry-detail p { font-size: 14px; color: #4A5E4C; line-height: 1.7; }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 12px;
+    border: 1px solid var(--orange); color: var(--orange);
+    text-decoration: none; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 16px 32px; width: fit-content;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--orange); color: var(--white); }
+
+  /* PRODUCT NAV */
+  .product-nav {
+    background: var(--cream); padding: 40px 80px;
+    border-top: 1px solid #D8E8DA;
+  }
+
+  .product-nav-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #AAA; margin-bottom: 20px;
+  }
+
+  .product-links { display: flex; gap: 0; }
+
+  .product-link {
+    flex: 1; padding: 24px 28px; border: 1px solid #D8E8DA;
+    border-right: none; text-decoration: none; transition: background 0.2s;
+  }
+
+  .product-link:last-child { border-right: 1px solid #D8E8DA; }
+  .product-link:hover { background: var(--white); }
+
+  .product-link .pl-tag {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #AAA; margin-bottom: 6px;
+  }
+
+  .product-link .pl-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; color: var(--text);
+  }
+
+  .product-link.active .pl-name { color: var(--orange); }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); padding: 40px 80px;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+
+  footer p { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.05em; }
+
+  .footer-nav { display: flex; gap: 28px; }
+
+  .footer-nav a {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s;
+  }
+
+  .footer-nav a:hover { color: #8DC878; }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .hero { padding: 0 24px 60px; justify-content: flex-start; }
+    .hero-content { text-align: left; }
+    .hero-tag { justify-content: flex-start; }
+    .hero-tag::after { display: none; }
+    .hero-tag::before { content: ''; display: block; width: 32px; height: 1px; background: #8DC878; }
+    .section-intro { grid-template-columns: 1fr; }
+    .intro-img { height: 360px; order: 0; }
+    .intro-text { padding: 48px 24px; }
+    .gallery, .buyer-pitch, .specs, .datasheet, .inquiry, footer { padding: 48px 24px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:first-child { grid-row: auto; }
+    .pitch-inner { grid-template-columns: 1fr; gap: 40px; }
+    .datasheet { flex-direction: column; align-items: flex-start; }
+    .inquiry { grid-template-columns: 1fr; }
+    .product-nav { padding: 32px 24px; }
+    
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Good Hope Produce</a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Certifications</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Good Hope Produce · Peru</div>
+    <h1>Peruvian<br><em>Mandarins</em></h1>
+    <p class="hero-sub">Satsuma · W. Murcott · Tango · Orri. GlobalG.A.P. certified. Counter-season supply from Huaral, Lima.</p>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<div class="cert-bar">
+  <div class="cert-item">Certified Organic</div>
+  <div class="cert-item">GlobalG.A.P.</div>
+  <div class="cert-item">GRASP Verified</div>
+  <div class="cert-item">USDA NOP</div>
+  <div class="cert-item">EU Organic Reg. 2018/848</div>
+  <div class="cert-item">Canada Organic COR</div>
+  <div class="cert-item">Certified by Kiwa</div>
+  <div class="cert-item">Satsuma: Apr–Aug</div>
+  <div class="cert-item">W. Murcott / Tango / Orri: May–Sep</div>
+</div>
+
+<p>Satsuma available April–August · W. Murcott, Tango &amp; Orri available May–September — counter-cyclical to Northern Hemisphere production.</p>
+</div>
+
+<!-- INTRO -->
+<section class="section-intro">
+  <div class="intro-img"></div>
+  <div class="intro-text">
+    <div class="section-label">The Product</div>
+    <h2>Four varieties.<br><em>Certified</em><br>counter-season supply.</h2>
+    <p>Good Hope Produce sources Peruvian mandarins from certified orchards in Huaral, Lima — one of Peru's primary citrus-producing regions. Four varieties across two overlapping harvest windows give importers flexible supply coverage from April through September, directly addressing Northern Hemisphere off-season gaps.</p>
+    <p>All production operates under GlobalG.A.P. and GRASP certification, with full traceability from field to packing house. Minimum Brix ≥ 9.0°, export corrugated cartons in 10 kg and 15 kg grades, cold chain mandatory from pre-cooling through reefer container delivery.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-header">
+    <h2>Grove to<br>export dock.</h2>
+    <p>Harvest photography and full chain-of-custody documentation available on request for supplier qualification.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1558604768-4b3637f83f7f?w=900&q=80" alt="Citrus grove Peru">
+      <div class="gallery-item-label">Mandarin Orchards — Huaral, Lima</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1564502804881-26f5c10d6a2c?w=900&q=80" alt="Citrus harvest">
+      <div class="gallery-item-label">Harvest — Satsuma Season</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1600189490681-4d05478e5a24?w=600&q=80" alt="Citrus sorting">
+      <div class="gallery-item-label">Grading & Quality Control</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?w=600&q=80" alt="Citrus fresh">
+      <div class="gallery-item-label">W. Murcott — Export Grade</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1583735396520-a20498b8534b?w=600&q=80" alt="Export ready citrus">
+      <div class="gallery-item-label">Cold Chain Pre-Cooling</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUYER PITCH -->
+<section class="buyer-pitch">
+  <div class="pitch-inner">
+    <div class="pitch-stat-col">
+      <div class="pitch-stat">
+        <div class="number">6+</div>
+        <div class="label">Active Export Certifications</div>
+    <div class="pitch-copy">
+      <div class="section-label">Why Peruvian Mandarins</div>
+      <h2>Four varieties.<br>One certified<br><em>supply partner.</em></h2>
+      <p>Peruvian mandarins are structurally counter-cyclical to European and US production. Satsuma opens from April, W. Murcott, Tango, and Orri follow through September — covering the precise window when Northern Hemisphere volumes tighten. <strong>Good Hope Produce gives procurement teams a certified, traceability-documented partner for that window.</strong></p>
+      <p>Our orchards in Huaral operate under GlobalG.A.P. certification with GRASP verification and full MRL compliance to EU standards — the documentation your compliance and sustainability teams require, already in place. Calibers X through 4X in 10 kg cartons, and calibers 1–3 in 15 kg cartons, with ventilated export packaging suitable for palletized sea freight.</p>
+      <p>Each shipment comes with full post-harvest documentation: shelf life up to 3 weeks at 4°C, cold chain certified, Brix/acidity ratio balanced to export standards with maximum 3% cosmetic defect tolerance. If your annual plan has a supply gap between April and September and you need a certified partner your auditors will approve — the conversation starts here.</p>
+    </div>
+    </div>
+      <div class="pitch-stat">
+        <div class="number">2</div>
+        <div class="label">Growing Zones (Coastal & Mid-Valley)</div>
+      </div>
+      <div class="pitch-stat">
+        <div class="number">EU · US · CA</div>
+        <div class="label">Approved Destination Markets</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs">
+  <div class="specs-header">
+    <div class="section-label">Technical Specifications</div>
+    <h2>Product Parameters</h2>
+    <p>Full technical datasheet available for download below.</p>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-row"><div class="spec-key">Product Category</div><div class="spec-val">Fresh Citrus Fruit</div></div>
+    <div class="spec-row"><div class="spec-key">Origin</div><div class="spec-val">Peru — Coastal & Mid-Valley Growing Regions</div></div>
+    <div class="spec-row"><div class="spec-key">Varieties Available</div><div class="spec-val">Contact for current season variety list</div></div>
+    <div class="spec-row"><div class="spec-key">Forms Available</div><div class="spec-val">Fresh whole fruit — calibrated grades</div></div>
+    <div class="spec-row"><div class="spec-key">Brix (typical)</div><div class="spec-val">Available in full technical datasheet</div></div>
+    <div class="spec-row"><div class="spec-key">Grades Available</div><div class="spec-val">Certified Organic · Conventional</div></div>
+    <div class="spec-row"><div class="spec-key">Certifications</div><div class="spec-val">USDA NOP · EU Organic · Canada Organic (COR) · GlobalG.A.P. · GRASP · Kiwa</div></div>
+    <div class="spec-row"><div class="spec-key">Packaging</div><div class="spec-val">Export cartons — to buyer specification and destination market requirements</div></div>
+    <div class="spec-row"><div class="spec-key">Cold Chain</div><div class="spec-val">Full pre-cooling and reefer container export</div></div>
+    <div class="spec-row"><div class="spec-key">Season Window</div><div class="spec-val">Contact for current and upcoming season schedule</div></div>
+    <div class="spec-row"><div class="spec-key">Destination Markets</div><div class="spec-val">EU · USA · Canada — compliance documentation available per destination</div></div>
+    <div class="spec-row"><div class="spec-key">Minimum Order</div><div class="spec-val">Contact for current availability and MOQ</div></div>
+  </div>
+</section>
+
+<!-- DATASHEET CTA -->
+<section class="datasheet">
+  <div class="datasheet-text">
+    <div class="section-label" style="color: rgba(141,200,120,0.7); margin-bottom:12px;">Technical Documentation</div>
+    <h2>Download the Peruvian<br>Mandarins Data Sheet</h2>
+    <p>Full variety specifications (Satsuma, W. Murcott, Tango, Orri), Brix and acidity parameters, harvest calendar, caliber-to-packaging matrix, cold chain requirements, and regulatory documentation for EU, US, and Canadian import compliance.</p>
+  </div>
+  <a href="mandarin-datasheet.pdf" class="btn-datasheet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+    </svg>
+    Download Data Sheet
+  </a>
+</section>
+
+<!-- INQUIRY -->
+<section class="inquiry">
+  <h2>Ready to<br><em>source</em><br>Peruvian Mandarins?</h2>
+  <div class="inquiry-detail">
+    <p>We work with importers, distributors, and retail sourcing teams at volume. Tell us your variety preferences, caliber requirements, estimated annual volume, and destination market. We respond within one business day.</p>
+    <p style="font-size:13px; color:#AAA;">Good Hope Produce · Lima, Peru · info@goodhopeproduce.com</p>
+    <a href="mailto:info@goodhopeproduce.com" class="btn-outline">Send Inquiry →</a>
+  </div>
+</section>
+
+<!-- PRODUCT NAV -->
+<div class="product-nav">
+  <div class="product-nav-label">Also from Good Hope Produce</div>
+  <div class="product-links">
+    <a href="turmeric.html" class="product-link">
+      <div class="pl-tag">View product →</div>
+      <div class="pl-name">Peruvian Turmeric</div>
+    </a>
+    <a href="mandarins.html" class="product-link active">
+      <div class="pl-tag">Currently viewing</div>
+      <div class="pl-name" style="color:var(--orange);">Peruvian Mandarins</div>
+    </a>
+    <a href="ginger.html" class="product-link">
+      <div class="pl-tag">View product →</div>
+      <div class="pl-name">Peruvian Ginger</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Inversiones Good Hope SAC · Lima, Peru · All rights reserved</p>
+  <nav class="footer-nav">
+    <a href="#">Products</a>
+    <a href="#">Certifications</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </nav>
+</footer>
+
+</body>
+</html>

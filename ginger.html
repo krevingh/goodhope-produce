@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peruvian Ginger — Good Hope Produce</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ginger: #A0522D;
+    --ginger-light: #C8763A;
+    --ginger-pale: #FDF5EE;
+    --dark: #1A0F08;
+    --earth: #4A2810;
+    --bark: #2C1A0E;
+    --warm: #F5EDE4;
+    --white: #FFFFFF;
+    --text: #1E1008;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--warm);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 48px;
+    background: rgba(26, 15, 8, 0.88);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif; font-size: 15px;
+    font-weight: 400; letter-spacing: 0.15em; color: #DEB887;
+    text-transform: uppercase; text-decoration: none;
+  }
+
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.65); text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: #DEB887; }
+
+  /* HERO — full bleed with dramatic left-aligned layout */
+  .hero {
+    position: relative; height: 100vh; min-height: 640px;
+    overflow: hidden; display: flex; align-items: center;
+    padding: 0 0 0 80px;
+  }
+
+  .hero-img {
+    position: absolute; inset: 0;
+    background: url('https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=1800&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 8s ease-out forwards;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.0); }
+  }
+
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      100deg,
+      rgba(26,15,8,0.92) 0%,
+      rgba(26,15,8,0.65) 40%,
+      rgba(26,15,8,0.1) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 580px;
+    animation: fadeUp 1s ease 0.3s both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #DEB887; margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+
+  .hero-tag::before {
+    content: ''; display: block; width: 32px; height: 1px; background: #DEB887;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(64px, 8vw, 110px);
+    font-weight: 300; line-height: 0.9;
+    color: var(--white); letter-spacing: -0.02em; margin-bottom: 28px;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--ginger-light); }
+
+  .hero-sub {
+    font-family: 'Lora', serif; font-size: 17px; font-style: italic;
+    color: rgba(255,255,255,0.8); line-height: 1.6; max-width: 420px;
+  }
+
+  /* Vertical product descriptor on right side */
+  .hero-vertical {
+    position: absolute; right: 48px; top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(255,255,255,0.25); white-space: nowrap; z-index: 2;
+    transform-origin: center center;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 40px; right: 60px; z-index: 2;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 10px; color: rgba(255,255,255,0.4); font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+  }
+
+  .hero-scroll::after {
+    content: ''; display: block; width: 1px; height: 48px;
+    background: rgba(255,255,255,0.25);
+    animation: scrollLine 1.5s ease infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* CERT BAR */
+  .cert-bar {
+    background: var(--bark); padding: 18px 48px;
+    display: flex; justify-content: center; align-items: center;
+    gap: 0; flex-wrap: wrap;
+  }
+
+  .cert-item {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); padding: 4px 20px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+  .cert-item:last-child { border-right: none; }
+
+  /* INTRO — text right, image left */
+  .section-intro {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 540px;
+  }
+
+  .intro-img {
+    background: url('https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=900&q=80') center/cover no-repeat;
+  }
+
+  .intro-text {
+    padding: 80px 80px 80px 64px;
+    display: flex; flex-direction: column; justify-content: center;
+    background: var(--ginger-pale);
+  }
+
+  .section-label {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--ginger); margin-bottom: 24px;
+  }
+
+  .intro-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px); font-weight: 300;
+    line-height: 1.15; color: var(--text); margin-bottom: 28px;
+  }
+
+  .intro-text h2 em { font-style: italic; color: var(--ginger); }
+
+  .intro-text p {
+    font-family: 'Lora', serif; font-size: 16px;
+    line-height: 1.8; color: var(--earth); margin-bottom: 16px;
+  }
+
+  /* SCENT / AROMA CALLOUT */
+  .aroma-callout {
+    background: var(--ginger); padding: 48px 80px;
+    display: flex; align-items: center; gap: 48px;
+  }
+
+  .aroma-quote {
+    font-family: 'Cormorant Garamond', serif; font-size: 28px;
+    font-style: italic; font-weight: 300; color: var(--white);
+    line-height: 1.4; flex: 1;
+  }
+
+  .aroma-source {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); flex-shrink: 0;
+  }
+
+  /* GALLERY */
+  .gallery { padding: 80px; background: var(--dark); }
+
+  .gallery-header {
+    display: flex; justify-content: space-between;
+    align-items: baseline; margin-bottom: 48px;
+  }
+
+  .gallery-header h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 44px;
+    font-weight: 300; color: var(--white);
+  }
+
+  .gallery-header p {
+    font-size: 13px; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.05em; max-width: 280px;
+    text-align: right; line-height: 1.6;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-rows: 280px 280px;
+    gap: 12px;
+  }
+
+  .gallery-item { overflow: hidden; position: relative; }
+  .gallery-item:last-child { grid-row: 1 / 3; }
+
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease; display: block;
+  }
+
+  .gallery-item:hover img { transform: scale(1.04); }
+
+  .gallery-item-label {
+    position: absolute; bottom: 16px; left: 16px;
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: rgba(255,255,255,0.7); background: rgba(26,15,8,0.6);
+    padding: 5px 10px; backdrop-filter: blur(4px);
+  }
+
+  /* BUYER PITCH */
+  .buyer-pitch {
+    padding: 100px 80px; background: var(--warm);
+    position: relative; overflow: hidden;
+  }
+
+  .buyer-pitch::after {
+    content: 'GINGER';
+    position: absolute; right: -60px; bottom: -30px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 200px; font-weight: 300;
+    color: rgba(160, 82, 45, 0.04); letter-spacing: 0.1em;
+    white-space: nowrap; pointer-events: none;
+    line-height: 1;
+  }
+
+  .pitch-inner {
+    display: grid; grid-template-columns: 1fr 2fr;
+    gap: 80px; align-items: start;
+  }
+
+  .pitch-stat-col { display: flex; flex-direction: column; gap: 48px; }
+
+  .pitch-stat { border-top: 1px solid rgba(160,82,45,0.3); padding-top: 20px; }
+
+  .pitch-stat .number {
+    font-family: 'Cormorant Garamond', serif; font-size: 52px;
+    font-weight: 300; color: var(--ginger); line-height: 1; margin-bottom: 6px;
+  }
+
+  .pitch-stat .label {
+    font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--earth);
+  }
+
+  .pitch-copy h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 50px); font-weight: 300;
+    line-height: 1.2; color: var(--text); margin-bottom: 32px;
+  }
+
+  .pitch-copy h2 em { font-style: italic; color: var(--ginger); }
+
+  .pitch-copy p {
+    font-family: 'Lora', serif; font-size: 16px;
+    line-height: 1.85; color: var(--earth); margin-bottom: 20px;
+  }
+
+  .pitch-copy p strong { font-weight: 500; color: var(--text); }
+
+  /* SPECS */
+  .specs { padding: 80px; background: var(--white); }
+
+  .specs-header { margin-bottom: 48px; }
+
+  .specs-header h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 40px;
+    font-weight: 300; color: var(--text); margin-bottom: 8px;
+  }
+
+  .specs-header p { font-size: 13px; color: #999; letter-spacing: 0.05em; }
+
+  .specs-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 0; border: 1px solid #EAE0D8;
+  }
+
+  .spec-row {
+    display: grid; grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid #EAE0D8;
+  }
+
+  .spec-row:last-child { border-bottom: none; }
+  .spec-row:nth-child(odd) { background: #FDF8F4; }
+
+  .spec-key {
+    padding: 16px 20px; font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--ginger);
+    border-right: 1px solid #EAE0D8; font-weight: 500;
+  }
+
+  .spec-val { padding: 16px 20px; font-size: 14px; color: var(--text); line-height: 1.4; }
+
+  /* DATASHEET */
+  .datasheet {
+    padding: 80px; background: var(--bark);
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 48px;
+  }
+
+  .datasheet-text h2 {
+    font-family: 'Cormorant Garamond', serif; font-size: 40px;
+    font-weight: 300; color: var(--white); margin-bottom: 12px;
+  }
+
+  .datasheet-text p {
+    font-size: 14px; color: rgba(255,255,255,0.55);
+    line-height: 1.6; max-width: 480px;
+  }
+
+  .btn-datasheet {
+    display: inline-flex; align-items: center; gap: 14px;
+    background: var(--ginger-light); color: var(--white);
+    text-decoration: none; font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 18px 36px; white-space: nowrap;
+    transition: background 0.2s, gap 0.2s;
+  }
+
+  .btn-datasheet:hover { background: #DA8A50; gap: 20px; }
+  .btn-datasheet svg { width: 18px; height: 18px; }
+
+  /* INQUIRY */
+  .inquiry {
+    padding: 80px; background: var(--ginger-pale);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: center;
+  }
+
+  .inquiry h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 52px); font-weight: 300;
+    line-height: 1.1; color: var(--text);
+  }
+
+  .inquiry h2 em { font-style: italic; color: var(--ginger); }
+
+  .inquiry-detail { display: flex; flex-direction: column; gap: 24px; }
+
+  .inquiry-detail p { font-size: 14px; color: var(--earth); line-height: 1.7; }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 12px;
+    border: 1px solid var(--ginger); color: var(--ginger);
+    text-decoration: none; font-size: 11px; font-weight: 500;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    padding: 16px 32px; width: fit-content;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-outline:hover { background: var(--ginger); color: var(--white); }
+
+  /* PRODUCT NAV */
+  .product-nav {
+    background: var(--warm); padding: 40px 80px;
+    border-top: 1px solid #E0D0C4;
+  }
+
+  .product-nav-label {
+    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #BBB; margin-bottom: 20px;
+  }
+
+  .product-links { display: flex; gap: 0; }
+
+  .product-link {
+    flex: 1; padding: 24px 28px; border: 1px solid #E0D0C4;
+    border-right: none; text-decoration: none; transition: background 0.2s;
+  }
+
+  .product-link:last-child { border-right: 1px solid #E0D0C4; }
+  .product-link:hover { background: var(--white); }
+
+  .product-link .pl-tag {
+    font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase;
+    color: #BBB; margin-bottom: 6px;
+  }
+
+  .product-link .pl-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400; color: var(--text);
+  }
+
+  .product-link.active .pl-name { color: var(--ginger); }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); padding: 40px 80px;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 16px;
+  }
+
+  footer p { font-size: 12px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em; }
+
+  .footer-nav { display: flex; gap: 28px; }
+
+  .footer-nav a {
+    font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+    color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s;
+  }
+
+  .footer-nav a:hover { color: #DEB887; }
+
+  @media (max-width: 768px) {
+    nav { padding: 16px 24px; }
+    .hero { padding: 0 24px 0 32px; }
+    .section-intro { grid-template-columns: 1fr; }
+    .intro-img { height: 360px; }
+    .intro-text { padding: 48px 24px; }
+    .aroma-callout { padding: 40px 24px; flex-direction: column; }
+    .gallery { padding: 48px 24px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .gallery-item:last-child { grid-row: auto; grid-column: 1 / 3; }
+    .buyer-pitch, .specs, .datasheet, .inquiry, footer { padding: 48px 24px; }
+    .pitch-inner { grid-template-columns: 1fr; gap: 40px; }
+    .datasheet { flex-direction: column; align-items: flex-start; }
+    .inquiry { grid-template-columns: 1fr; }
+    .product-nav { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Good Hope Produce</a>
+  <ul class="nav-links">
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Certifications</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Good Hope Produce · Peru</div>
+    <h1>Peruvian<br><em>Ginger</em></h1>
+    <p class="hero-sub">Zingiber officinale from Peru's tropical valleys — sharp oleoresin profile, certified supply chain, export-ready at volume.</p>
+  </div>
+  <div class="hero-vertical">Zingiber officinale · Peru · Certified Organic</div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<div class="cert-bar">
+  <div class="cert-item">Certified Organic</div>
+  <div class="cert-item">GlobalG.A.P.</div>
+  <div class="cert-item">GRASP Verified</div>
+  <div class="cert-item">USDA NOP</div>
+  <div class="cert-item">EU Organic Reg. 2018/848</div>
+  <div class="cert-item">Canada Organic COR</div>
+  <div class="cert-item">Certified by Kiwa</div>
+</div>
+
+<!-- INTRO -->
+<section class="section-intro">
+  <div class="intro-img"></div>
+  <div class="intro-text">
+    <div class="section-label">The Product</div>
+    <h2>Tropical valleys.<br><em>Consistent</em> oleoresin<br>profile.</h2>
+    <p>Good Hope Produce sources ginger from Peru's tropical valleys, where warm temperatures and high humidity produce rhizomes with the sharp, clean aroma and consistent oleoresin content preferred by food manufacturers, beverage producers, and nutraceutical brands.</p>
+    <p>Available as fresh whole root, dried slices, and dried whole rhizome. Certified organic and conventional grades. Export packaging to EU, US, and Canadian import standards, with full traceability documentation at every step of the chain.</p>
+  </div>
+</section>
+
+<!-- AROMA CALLOUT -->
+<div class="aroma-callout">
+  <p class="aroma-quote">"For industrial buyers, the question is never whether ginger tastes like ginger — it's whether it tastes the same every shipment."</p>
+  <div class="aroma-source">Good Hope Produce<br>Quality Commitment</div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="gallery-header">
+    <h2>Tropical valley<br>to export dock.</h2>
+    <p>Harvest imagery and full documentation package available on request for supplier qualification processes.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=600&q=80" alt="Ginger farm">
+      <div class="gallery-item-label">Tropical Valley Farm — Peru</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1573414406286-fe27e68890ca?w=600&q=80" alt="Ginger harvest">
+      <div class="gallery-item-label">Harvest Season</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1590779033100-9f60a05a013d?w=900&q=80" alt="Fresh ginger root">
+      <div class="gallery-item-label">Fresh Root — Selection Grade</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?w=600&q=80" alt="Ginger processing">
+      <div class="gallery-item-label">Post-Harvest Processing</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=600&q=80" alt="Ginger dried">
+      <div class="gallery-item-label">Dried Product Grading</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUYER PITCH -->
+<section class="buyer-pitch">
+  <div class="pitch-inner">
+    <div class="pitch-stat-col">
+      <div class="pitch-stat">
+        <div class="number">2+</div>
+        <div class="label">Certified Growing Zones</div>
+      </div>
+      <div class="pitch-stat">
+        <div class="number">6</div>
+        <div class="label">Active Export Certifications</div>
+      </div>
+      <div class="pitch-stat">
+        <div class="number">EU · US · CA</div>
+        <div class="label">Approved Destination Markets</div>
+      </div>
+    </div>
+    <div class="pitch-copy">
+      <div class="section-label">Why Peruvian Ginger</div>
+      <h2>The oleoresin profile<br>your formulation<br><em>can rely on.</em></h2>
+      <p>Industrial buyers sourcing ginger for food manufacturing, beverage production, or nutraceutical formulation face a consistent challenge: batch-to-batch variability in oleoresin and gingerol content that creates QC burden and formulation drift. <strong>Peruvian ginger from Good Hope Produce is sourced and managed to minimize that variability.</strong></p>
+      <p>Our supply chain runs from certified tropical valley farms through GlobalG.A.P.-compliant post-harvest handling, with consistent monitoring of key quality parameters throughout. Fresh root, dried slices, and dried whole rhizome are available — all with full traceability documentation and certificates of analysis for each lot.</p>
+      <p>We work with food manufacturers, nutraceutical brands, B2B distributors, and beverage companies at volume. If your procurement process requires lot-level documentation, consistent oleoresin profiles, and a supply partner who meets EU, US, and Canadian import compliance requirements without a compliance gap conversation — this is the right inquiry to send.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SPECS -->
+<section class="specs">
+  <div class="specs-header">
+    <div class="section-label">Technical Specifications</div>
+    <h2>Product Parameters</h2>
+    <p>Full technical datasheet available for download below. Key parameters summarized here.</p>
+  </div>
+  <div class="specs-grid">
+    <div class="spec-row"><div class="spec-key">Botanical Name</div><div class="spec-val">Zingiber officinale Roscoe</div></div>
+    <div class="spec-row"><div class="spec-key">Origin</div><div class="spec-val">Peru — Tropical Valley Growing Regions</div></div>
+    <div class="spec-row"><div class="spec-key">Forms Available</div><div class="spec-val">Fresh whole root · Dried slices · Dried whole rhizome</div></div>
+    <div class="spec-row"><div class="spec-key">Oleoresin Content</div><div class="spec-val">Available in full technical datasheet by lot</div></div>
+    <div class="spec-row"><div class="spec-key">Moisture (dried)</div><div class="spec-val">≤ 10%</div></div>
+    <div class="spec-row"><div class="spec-key">Ash Content</div><div class="spec-val">≤ 6.0%</div></div>
+    <div class="spec-row"><div class="spec-key">Grades Available</div><div class="spec-val">Certified Organic · Conventional</div></div>
+    <div class="spec-row"><div class="spec-key">Certifications</div><div class="spec-val">USDA NOP · EU Organic · Canada Organic (COR) · GlobalG.A.P. · GRASP · Kiwa</div></div>
+    <div class="spec-row"><div class="spec-key">Packaging</div><div class="spec-val">Export cartons / bulk bags — to buyer specification</div></div>
+    <div class="spec-row"><div class="spec-key">Shelf Life (dried)</div><div class="spec-val">18 months from production, stored ≤ 25°C, RH ≤ 65%</div></div>
+    <div class="spec-row"><div class="spec-key">Documentation</div><div class="spec-val">Certificate of Analysis · Phytosanitary · Organic Certificate per lot</div></div>
+    <div class="spec-row"><div class="spec-key">Minimum Order</div><div class="spec-val">Contact for current availability and MOQ</div></div>
+  </div>
+</section>
+
+<!-- DATASHEET CTA -->
+<section class="datasheet">
+  <div class="datasheet-text">
+    <div class="section-label" style="color: rgba(222,184,135,0.7); margin-bottom:12px;">Technical Documentation</div>
+    <h2>Download the Peruvian<br>Ginger Data Sheet</h2>
+    <p>Full technical specifications, oleoresin and gingerol parameters, certificate of analysis template, packaging options, and regulatory documentation for EU, US, and Canadian import compliance.</p>
+  </div>
+  <a href="ginger-datasheet.pdf" class="btn-datasheet">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+    </svg>
+    Download Data Sheet
+  </a>
+</section>
+
+<!-- INQUIRY -->
+<section class="inquiry">
+  <h2>Ready to<br><em>source</em><br>Peruvian Ginger?</h2>
+  <div class="inquiry-detail">
+    <p>We work with food manufacturers, nutraceutical brands, beverage companies, and B2B distributors at volume. Tell us your product form preference, grade requirement, estimated annual volume, and destination market. We respond within one business day.</p>
+    <p style="font-size:13px; color:#C4A898;">Good Hope Produce · Lima, Peru · info@goodhopeproduce.com</p>
+    <a href="mailto:info@goodhopeproduce.com" class="btn-outline">Send Inquiry →</a>
+  </div>
+</section>
+
+<!-- PRODUCT NAV -->
+<div class="product-nav">
+  <div class="product-nav-label">Also from Good Hope Produce</div>
+  <div class="product-links">
+    <a href="turmeric.html" class="product-link">
+      <div class="pl-tag">View product →</div>
+      <div class="pl-name">Peruvian Turmeric</div>
+    </a>
+    <a href="mandarins.html" class="product-link">
+      <div class="pl-tag">View product →</div>
+      <div class="pl-name">Peruvian Mandarins</div>
+    </a>
+    <a href="ginger.html" class="product-link active">
+      <div class="pl-tag">Currently viewing</div>
+      <div class="pl-name">Peruvian Ginger</div>
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Inversiones Good Hope SAC · Lima, Peru · All rights reserved</p>
+  <nav class="footer-nav">
+    <a href="#">Products</a>
+    <a href="#">Certifications</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </nav>
+</footer>
+
+</body>
+</html>
