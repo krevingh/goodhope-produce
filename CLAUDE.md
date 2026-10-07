@@ -25,7 +25,8 @@ Git commit format: "goodhope — description of change"
 3. Peruvian Mandarins — mandarins.html — mandarin-datasheet.pdf
 
 ## Certifications
-Organic EU, Organic USDA, Canada Organic COR, GlobalG.A.P., GRASP, Kiwa
+Turmeric and Ginger: Organic EU, Organic USDA, Canada Organic COR, GlobalG.A.P., GRASP, Kiwa
+Mandarins: GlobalG.A.P. (GGN), GRASP, CLP, EU MRL compliant — conventional only, no organic claims
 
 ## Target markets
 EU, USA, Canada — procurement buyers and importers
