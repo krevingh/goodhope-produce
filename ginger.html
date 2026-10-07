@@ -447,6 +447,18 @@
     .nav-links { gap: 22px; justify-content: center; }
     .nav-links a { font-size: 11px; }
     .hero-tag::before, .hero-tag::after { display: none; }
+    .hero { padding-left: 24px; padding-right: 24px; }
+    .hero-content { max-width: 100%; }
+    .hero-scroll, .hero-vertical { display: none; }
+    .gallery-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+    .gallery-header p { text-align: left; max-width: none; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .spec-row { grid-template-columns: 136px minmax(0, 1fr); }
+    .spec-key { padding: 14px 12px; letter-spacing: 0.05em; }
+    .spec-val { padding: 14px 12px; overflow-wrap: anywhere; }
+    .product-links { flex-direction: column; }
+    .product-link { border-right: 1px solid #E0D0C4; border-bottom: none; }
+    .product-link:last-child { border-bottom: 1px solid #E0D0C4; }
     .hero { padding: 0 24px 0 32px; }
     .section-intro { grid-template-columns: 1fr; }
     .intro-img { height: 360px; }
@@ -470,7 +482,6 @@
   <ul class="nav-links">
     <li><a href="index.html#products">Products</a></li>
     <li><a href="index.html#certifications">Certifications</a></li>
-    <li><a href="index.html">About</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
@@ -539,8 +550,8 @@
       <div class="gallery-item-label">Ginger Root — Market Selection</div>
     </div>
     <div class="gallery-item">
-      <img src="https://images.unsplash.com/photo-1573729065599-a8d4bd3bad96?w=600&q=80" alt="Ginger with spices">
-      <div class="gallery-item-label">Ginger — Aroma & Spice Profile</div>
+      <img src="https://images.unsplash.com/photo-1635843104103-ddd88e1c5141?w=600&q=80" alt="Ginger rhizome close-up">
+      <div class="gallery-item-label">Ginger Root — Rhizome Detail</div>
     </div>
   </div>
 </section>
@@ -602,7 +613,7 @@
     <h2>Download the Peruvian<br>Ginger Data Sheet</h2>
     <p>Full technical specifications, oleoresin and gingerol parameters, certificate of analysis template, packaging options, and regulatory documentation for EU, US, and Canadian import compliance.</p>
   </div>
-  <a href="ginger-datasheet.html" class="btn-datasheet" target="_blank">
+  <a href="ginger-datasheet.pdf" class="btn-datasheet" download="GoodHopeProduce_Ginger_DataSheet.pdf">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
     </svg>

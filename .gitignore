@@ -1,0 +1,8 @@
+# Local working files — never publish
+.claude/
+Project Misc/
+* - Copy.*
+*.tmp
+.DS_Store
+Thumbs.db
+desktop.ini

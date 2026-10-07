@@ -435,6 +435,18 @@
     .nav-links { gap: 22px; justify-content: center; }
     .nav-links a { font-size: 11px; }
     .hero-tag::before, .hero-tag::after { display: none; }
+    .hero { padding-left: 24px; padding-right: 24px; }
+    .hero-content { max-width: 100%; }
+    .hero-scroll, .hero-vertical { display: none; }
+    .gallery-header { flex-direction: column; align-items: flex-start; gap: 16px; margin-bottom: 32px; }
+    .gallery-header p { text-align: left; max-width: none; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .spec-row { grid-template-columns: 136px minmax(0, 1fr); }
+    .spec-key { padding: 14px 12px; letter-spacing: 0.05em; }
+    .spec-val { padding: 14px 12px; overflow-wrap: anywhere; }
+    .product-links { flex-direction: column; }
+    .product-link { border-right: 1px solid #D8E8DA; border-bottom: none; }
+    .product-link:last-child { border-bottom: 1px solid #D8E8DA; }
     .hero { padding: 0 24px 60px; justify-content: flex-start; }
     .hero-content { text-align: left; }
     .hero-tag { justify-content: flex-start; }
@@ -461,7 +473,6 @@
   <ul class="nav-links">
     <li><a href="index.html#products">Products</a></li>
     <li><a href="index.html#certifications">Certifications</a></li>
-    <li><a href="index.html">About</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
 </nav>
@@ -479,13 +490,10 @@
 </section>
 
 <div class="cert-bar">
-  <div class="cert-item">Certified Organic</div>
-  <div class="cert-item">Global G.A.P.</div>
+  <div class="cert-item">Global G.A.P. (GGN)</div>
   <div class="cert-item">GRASP Verified</div>
-  <div class="cert-item">USDA NOP</div>
-  <div class="cert-item">EU Organic Reg. 2018/848</div>
-  <div class="cert-item">Canada Organic COR</div>
-  <div class="cert-item">Certified by Kiwa</div>
+  <div class="cert-item">CLP Certified</div>
+  <div class="cert-item">EU MRL Compliant</div>
   <div class="cert-item">Satsuma: Apr–Aug</div>
   <div class="cert-item">W. Murcott / Tango / Orri: May–Sep</div>
 </div>
@@ -572,8 +580,8 @@
     <div class="spec-row"><div class="spec-key">Varieties Available</div><div class="spec-val">Contact for current season variety list</div></div>
     <div class="spec-row"><div class="spec-key">Forms Available</div><div class="spec-val">Fresh whole fruit — calibrated grades</div></div>
     <div class="spec-row"><div class="spec-key">Brix (typical)</div><div class="spec-val">Available in full technical datasheet</div></div>
-    <div class="spec-row"><div class="spec-key">Grades Available</div><div class="spec-val">Certified Organic · Conventional</div></div>
-    <div class="spec-row"><div class="spec-key">Certifications</div><div class="spec-val">USDA NOP · EU Organic · Canada Organic (COR) · Global G.A.P. · GRASP · Kiwa</div></div>
+    <div class="spec-row"><div class="spec-key">Grades Available</div><div class="spec-val">Conventional · Global G.A.P. certified</div></div>
+    <div class="spec-row"><div class="spec-key">Certifications</div><div class="spec-val">Global G.A.P. (GGN) · GRASP · CLP · EU MRL compliant</div></div>
     <div class="spec-row"><div class="spec-key">Packaging</div><div class="spec-val">Export cartons — to buyer specification and destination market requirements</div></div>
     <div class="spec-row"><div class="spec-key">Cold Chain</div><div class="spec-val">Full pre-cooling and reefer container export</div></div>
     <div class="spec-row"><div class="spec-key">Season Window</div><div class="spec-val">Contact for current and upcoming season schedule</div></div>
@@ -589,7 +597,7 @@
     <h2>Download the Peruvian<br>Mandarins Data Sheet</h2>
     <p>Full variety specifications (Satsuma, W. Murcott, Tango, Orri), Brix and acidity parameters, harvest calendar, caliber-to-packaging matrix, cold chain requirements, and regulatory documentation for EU, US, and Canadian import compliance.</p>
   </div>
-  <a href="mandarin-datasheet.html" class="btn-datasheet" target="_blank">
+  <a href="mandarin-datasheet.pdf" class="btn-datasheet" download="GoodHopeProduce_Mandarins_DataSheet.pdf">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
       <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
     </svg>
