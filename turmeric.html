@@ -30,7 +30,7 @@
   }
 
   /* ── NAV ── */
-  nav {
+  nav:not(.footer-nav) {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
@@ -659,7 +659,11 @@
   .product-link.active .pl-name { color: var(--gold); }
 
   @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
+    nav:not(.footer-nav) { padding: 12px 16px; flex-wrap: wrap; justify-content: center; row-gap: 8px; }
+    .nav-brand { width: 100%; text-align: center; font-size: 14px; }
+    .nav-links { gap: 22px; justify-content: center; }
+    .nav-links a { font-size: 11px; }
+    .hero-tag::before, .hero-tag::after { display: none; }
     .hero { padding: 0 0 60px 32px; }
     .section-intro { grid-template-columns: 1fr; }
     .intro-img { height: 360px; }
