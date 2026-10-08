@@ -973,11 +973,17 @@
 
 <script>
 /* Collapse spec groups on phones: keep the first group of each product open */
-if (window.matchMedia('(max-width: 768px)').matches) {
-  document.querySelectorAll('.variety-block').forEach(function (b) {
-    b.querySelectorAll('.spec-details').forEach(function (d, i) { if (i > 0) d.removeAttribute('open'); });
-  });
-}
+(function () {
+  var mq = window.matchMedia('(max-width: 768px)');
+  if (mq.matches) {
+    document.querySelectorAll('.variety-block').forEach(function (b) {
+      b.querySelectorAll('.spec-details').forEach(function (d, i) { if (i > 0) d.removeAttribute('open'); });
+    });
+  }
+  /* Re-open everything if the screen becomes desktop-wide (e.g. phone rotated to landscape) */
+  var reopen = function (e) { if (!e.matches) document.querySelectorAll('.spec-details').forEach(function (d) { d.setAttribute('open', ''); }); };
+  if (mq.addEventListener) mq.addEventListener('change', reopen); else if (mq.addListener) mq.addListener(reopen);
+})();
 </script>
 </body>
 </html>
