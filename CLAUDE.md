@@ -6,8 +6,9 @@ GitHub: https://github.com/krevingh/goodhope-produce
 Local path: C:\Users\krevi\OneDrive - MAK Insights\Projects\goodhope-produce\
 
 ## Site files
-index.html, turmeric.html, ginger.html, mandarins.html
-turmeric-datasheet.pdf, ginger-datasheet.pdf, mandarin-datasheet.pdf
+index.html, ginger.html, turmeric.html, mandarins.html, goldenberry.html
+ginger-datasheet.pdf, turmeric-datasheet.pdf, mandarin-murcott-datasheet.pdf,
+mandarin-malvacea-datasheet.pdf, goldenberry-datasheet.pdf
 
 ## Brand colors
 Forest green #1B3A2A, Gold #C8860A, Parchment #FAF6EE
@@ -20,13 +21,16 @@ Static HTML only. No frameworks. All pages standalone.
 Git commit format: "goodhope — description of change"
 
 ## Products
-1. Peruvian Turmeric — turmeric.html — turmeric-datasheet.pdf
-2. Peruvian Ginger — ginger.html — ginger-datasheet.pdf
-3. Peruvian Mandarins — mandarins.html — mandarin-datasheet.pdf
+1. Peruvian Ginger — ginger.html — ginger-datasheet.pdf
+2. Peruvian Turmeric — turmeric.html — turmeric-datasheet.pdf
+3. Peruvian Mandarins (W. Murcott + Malvacea) — mandarins.html —
+   mandarin-murcott-datasheet.pdf, mandarin-malvacea-datasheet.pdf
+4. Peruvian Goldenberry — goldenberry.html — goldenberry-datasheet.pdf
 
 ## Certifications
-Turmeric and Ginger: Organic EU, Organic USDA, Canada Organic COR, GlobalG.A.P., GRASP, Kiwa
-Mandarins: GlobalG.A.P. (GGN), GRASP, CLP, EU MRL compliant — conventional only, no organic claims
+Ginger and Turmeric: Organic EU, Organic USDA, Canada Organic COR, GlobalG.A.P., GRASP, Kiwa
+Mandarins and Goldenberries: SENASA registration + phytosanitary certificate only —
+not organic, no GlobalG.A.P. or GRASP claims
 
 ## Target markets
 EU, USA, Canada — procurement buyers and importers

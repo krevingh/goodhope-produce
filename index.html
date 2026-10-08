@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Good Hope Produce — Certified Organic from Peru</title>
+<title>Good Hope Produce — Organic Ginger &amp; Turmeric, Fresh Mandarins &amp; Goldenberries from Peru</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lora:ital,wght@0,400;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -293,6 +293,37 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em
   footer { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
   .cert-bar { padding: 12px 20px; }
 }
+
+/* ── 2026-10 data-sheet update: 4 products, export calendar, per-product certifications ── */
+.product-cards { grid-template-columns: repeat(4, 1fr); }
+.cert-bar .cert-item strong { font-weight: 500; color: var(--gold-light); }
+.availability { background: var(--cream); padding: 100px 80px; }
+.availability .section-label { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.availability h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 52px); font-weight: 300; color: var(--ink); line-height: 1.1; margin-bottom: 16px; }
+.availability h2 em { font-style: italic; color: var(--gold); }
+.avail-intro { font-family: 'Lora', serif; font-size: 16px; color: #5a5040; margin-bottom: 36px; max-width: 620px; line-height: 1.7; }
+.season-cal { display: grid; grid-template-columns: 200px repeat(12, 1fr); border: 1px solid rgba(0,0,0,0.1); border-right: none; border-bottom: none; background: var(--white); }
+.season-cal > div { min-height: 44px; display: flex; align-items: center; justify-content: center; font-size: 11px; letter-spacing: 0.08em; border-right: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); }
+.season-cal .sc-head { text-transform: uppercase; color: #999; background: rgba(0,0,0,0.02); }
+.season-cal .sc-label { justify-content: flex-start; padding: 0 16px; font-size: 13px; letter-spacing: 0.02em; color: var(--ink); }
+.season-cal .on { background: var(--gold); }
+.season-cal .m-s { display: none; }
+.season-note { font-size: 13px; color: #888; margin-top: 14px; line-height: 1.6; }
+.cert-group-title { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; }
+.cert-grid + .cert-group-title { margin-top: 36px; }
+@media (max-width: 1100px) and (min-width: 769px) {
+  .product-cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .product-cards { grid-template-columns: 1fr; }
+  .availability { padding: 60px 24px; }
+  .season-cal { grid-template-columns: 84px repeat(12, 1fr); }
+  .season-cal > div { min-height: 36px; font-size: 10px; letter-spacing: 0; }
+  .season-cal .sc-label { padding: 0 6px; font-size: 11px; line-height: 1.2; }
+  .season-cal .m-l { display: none; }
+  .season-cal .m-s { display: inline; }
+  .cert-bar .cert-item { display: block; width: 100%; text-align: center; }
+}
 </style>
 </head>
 <body>
@@ -313,20 +344,15 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em
   <div class="hero-content">
     <div class="hero-tag">Good Hope Produce · Lima, Peru</div>
     <h1>Rooted in Peru.<br><em>Trusted Worldwide.</em></h1>
-    <p class="hero-sub">Good Hope Produce supplies certified organic turmeric and ginger, and Global G.A.P.-certified citrus — direct from Peru's most productive agricultural regions to importers and distributors across Europe, the United States, Mexico and Canada.</p>
+    <p class="hero-sub">Good Hope Produce supplies certified organic ginger and turmeric, plus fresh mandarins and goldenberries — direct from Peru's most productive agricultural regions to importers and distributors across Europe, the United States, Mexico and Canada.</p>
     <a href="#products" class="hero-cta">View Our Products</a>
   </div>
 </section>
 
 <!-- CERT BAR -->
 <div class="cert-bar">
-  <div class="cert-item">Certified Organic</div>
-  <div class="cert-item">Global G.A.P.</div>
-  <div class="cert-item">GRASP Verified</div>
-  <div class="cert-item">USDA NOP</div>
-  <div class="cert-item">EU Organic Reg. 2018/848</div>
-  <div class="cert-item">Canada Organic COR</div>
-  <div class="cert-item">Certified by Kiwa</div>
+  <div class="cert-item"><strong>Ginger &amp; Turmeric</strong> — Organic USDA · EU · Canada · GlobalG.A.P. · GRASP</div>
+  <div class="cert-item"><strong>Mandarins &amp; Goldenberries</strong> — SENASA registered · Phytosanitary certificate</div>
 </div>
 
 <!-- INTRO -->
@@ -334,22 +360,22 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em
   <div class="intro-text">
     <div class="section-label">Who We Are</div>
     <h2>A certified supply<br>partner rooted in<br><em>Peruvian origin.</em></h2>
-    <p>Good Hope Produce sources certified organic Turmeric and Ginger, and Global G.A.P.-certified Mandarins, from Peru's highland and coastal growing regions — delivering fully traceable, export-ready supply to industrial buyers, distributors, and importers in regulated markets.</p>
-    <p>Every shipment comes with complete chain-of-custody documentation, certificates of analysis, and phytosanitary certification.</p>
+    <p>Good Hope Produce exports certified organic Ginger and Turmeric, plus fresh Mandarins and Goldenberries, from Peru's growing regions — delivering traceable, export-ready supply to importers, distributors and industrial buyers in regulated markets.</p>
+    <p>Every shipment travels with a phytosanitary certificate and lot-level traceability. Ginger and turmeric add organic certification (USDA, EU and Canada), GlobalG.A.P., GRASP and lab analysis by Groen Agro Control.</p>
     <p>We respond to procurement inquiries within one business day.</p>
   </div>
   <div class="intro-stats">
     <div class="stat">
-      <div class="stat-num">3</div>
-      <div class="stat-label">Certified product lines<br>available for export</div>
+      <div class="stat-num">4</div>
+      <div class="stat-label">Product lines<br>available for export</div>
     </div>
     <div class="stat">
-      <div class="stat-num">6+</div>
-      <div class="stat-label">Active export certifications<br>including EU, USDA, Global G.A.P.</div>
+      <div class="stat-num">11</div>
+      <div class="stat-label">Months of the year with<br>at least one line in season</div>
     </div>
     <div class="stat">
       <div class="stat-num">EU·US·CA</div>
-      <div class="stat-label">Approved destination markets<br>with compliance documentation</div>
+      <div class="stat-label">Destination markets<br>with compliance documentation</div>
     </div>
   </div>
 </section>
@@ -358,44 +384,59 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em
 <section class="products" id="products">
   <div class="products-header">
     <div class="section-label">Our Products</div>
-    <h2>Three certified lines.<br><em>One supply partner.</em></h2>
+    <h2>Four product lines.<br><em>One supply partner.</em></h2>
   </div>
   <div class="product-cards">
-
-    <a href="turmeric.html" class="product-card">
-      <div class="product-card-img" style="background-image: url('https://images.unsplash.com/photo-1768729341334-666d6fe1385a?w=900&q=80');"></div>
-      <div class="product-card-overlay"></div>
-      <div class="product-card-content">
-        <div class="product-card-tag">Curcuma longa · Highland Grown</div>
-        <div class="product-card-name">Peruvian<br>Turmeric</div>
-        <div class="product-card-desc">Certified organic fresh turmeric from Peru's highland growing regions. Curcumin COA available per lot.</div>
-        <div class="product-card-link">View Product</div>
-      </div>
-    </a>
-
     <a href="ginger.html" class="product-card">
       <div class="product-card-img" style="background-image: url('https://images.unsplash.com/photo-1741517802684-ba07c444a5d2?w=900&q=80');"></div>
       <div class="product-card-overlay"></div>
       <div class="product-card-content">
-        <div class="product-card-tag">Zingiber officinale · Criolla Variety</div>
+        <div class="product-card-tag">Zingiber officinale · Criolla</div>
         <div class="product-card-name">Peruvian<br>Ginger</div>
-        <div class="product-card-desc">Criolla yellow ginger from tropical valleys. Sizes 40g–250g+. Air and sea freight weekly.</div>
+        <div class="product-card-desc">Certified organic yellow ginger, 50 g to 250 g+. Air and sea, January–February and June–December.</div>
         <div class="product-card-link">View Product</div>
       </div>
     </a>
-
+    <a href="turmeric.html" class="product-card">
+      <div class="product-card-img" style="background-image: url('https://images.unsplash.com/photo-1768729341334-666d6fe1385a?w=900&q=80');"></div>
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">Curcuma longa · Palillo</div>
+        <div class="product-card-name">Peruvian<br>Turmeric</div>
+        <div class="product-card-desc">Certified organic fresh turmeric, packed to EU and Canadian specs. June–December.</div>
+        <div class="product-card-link">View Product</div>
+      </div>
+    </a>
     <a href="mandarins.html" class="product-card">
       <div class="product-card-img" style="background-image: url('https://images.unsplash.com/photo-1507598641400-ec3536ba81bc?w=900&q=80');"></div>
       <div class="product-card-overlay"></div>
       <div class="product-card-content">
-        <div class="product-card-tag">Huaral, Lima · 4 Varieties</div>
+        <div class="product-card-tag">W. Murcott · Malvacea</div>
         <div class="product-card-name">Peruvian<br>Mandarins</div>
-        <div class="product-card-desc">Satsuma, W. Murcott, Tango & Orri. April–September counter-season supply. Brix ≥ 9.0°.</div>
+        <div class="product-card-desc">W. Murcott April–July, Malvacea August–December. Sea freight in 40-ft reefers.</div>
         <div class="product-card-link">View Product</div>
       </div>
     </a>
-
+    <a href="goldenberry.html" class="product-card">
+      <div class="product-card-img" style="background-image: url('https://images.unsplash.com/photo-1596411754250-72bce519ed8c?w=900&q=80');"></div>
+      <div class="product-card-overlay"></div>
+      <div class="product-card-content">
+        <div class="product-card-tag">Physalis peruviana · Huskless</div>
+        <div class="product-card-name">Peruvian<br>Goldenberries</div>
+        <div class="product-card-desc">Calyx removed, packed in retail punnets. Air freight, September–December.</div>
+        <div class="product-card-link">View Product</div>
+      </div>
+    </a>
   </div>
+</section>
+
+<!-- AVAILABILITY -->
+<section class="availability" id="availability">
+  <div class="section-label">Export Calendar</div>
+  <h2>What ships <em>when.</em></h2>
+  <p class="avail-intro">Plan your program around our export windows. Exact weekly volumes are confirmed per program.</p>
+  <div class="season-cal" role="table" aria-label="Export season by month"><div class="sc-label sc-head"></div><div class="sc-head"><span class="m-l">Jan</span><span class="m-s">J</span></div><div class="sc-head"><span class="m-l">Feb</span><span class="m-s">F</span></div><div class="sc-head"><span class="m-l">Mar</span><span class="m-s">M</span></div><div class="sc-head"><span class="m-l">Apr</span><span class="m-s">A</span></div><div class="sc-head"><span class="m-l">May</span><span class="m-s">M</span></div><div class="sc-head"><span class="m-l">Jun</span><span class="m-s">J</span></div><div class="sc-head"><span class="m-l">Jul</span><span class="m-s">J</span></div><div class="sc-head"><span class="m-l">Aug</span><span class="m-s">A</span></div><div class="sc-head"><span class="m-l">Sep</span><span class="m-s">S</span></div><div class="sc-head"><span class="m-l">Oct</span><span class="m-s">O</span></div><div class="sc-head"><span class="m-l">Nov</span><span class="m-s">N</span></div><div class="sc-head"><span class="m-l">Dec</span><span class="m-s">D</span></div><div class="sc-label">Ginger</div><div class="on" title="Jan: available"></div><div class="on" title="Feb: available"></div><div class="" title="Mar: not available"></div><div class="" title="Apr: not available"></div><div class="" title="May: not available"></div><div class="on" title="Jun: available"></div><div class="on" title="Jul: available"></div><div class="on" title="Aug: available"></div><div class="on" title="Sep: available"></div><div class="on" title="Oct: available"></div><div class="on" title="Nov: available"></div><div class="on" title="Dec: available"></div><div class="sc-label">Turmeric</div><div class="" title="Jan: not available"></div><div class="" title="Feb: not available"></div><div class="" title="Mar: not available"></div><div class="" title="Apr: not available"></div><div class="" title="May: not available"></div><div class="on" title="Jun: available"></div><div class="on" title="Jul: available"></div><div class="on" title="Aug: available"></div><div class="on" title="Sep: available"></div><div class="on" title="Oct: available"></div><div class="on" title="Nov: available"></div><div class="on" title="Dec: available"></div><div class="sc-label">Mandarin · W. Murcott</div><div class="" title="Jan: not available"></div><div class="" title="Feb: not available"></div><div class="" title="Mar: not available"></div><div class="on" title="Apr: available"></div><div class="on" title="May: available"></div><div class="on" title="Jun: available"></div><div class="on" title="Jul: available"></div><div class="" title="Aug: not available"></div><div class="" title="Sep: not available"></div><div class="" title="Oct: not available"></div><div class="" title="Nov: not available"></div><div class="" title="Dec: not available"></div><div class="sc-label">Mandarin · Malvacea</div><div class="" title="Jan: not available"></div><div class="" title="Feb: not available"></div><div class="" title="Mar: not available"></div><div class="" title="Apr: not available"></div><div class="" title="May: not available"></div><div class="" title="Jun: not available"></div><div class="" title="Jul: not available"></div><div class="on" title="Aug: available"></div><div class="on" title="Sep: available"></div><div class="on" title="Oct: available"></div><div class="on" title="Nov: available"></div><div class="on" title="Dec: available"></div><div class="sc-label">Goldenberry</div><div class="" title="Jan: not available"></div><div class="" title="Feb: not available"></div><div class="" title="Mar: not available"></div><div class="" title="Apr: not available"></div><div class="" title="May: not available"></div><div class="" title="Jun: not available"></div><div class="" title="Jul: not available"></div><div class="" title="Aug: not available"></div><div class="on" title="Sep: available"></div><div class="on" title="Oct: available"></div><div class="on" title="Nov: available"></div><div class="on" title="Dec: available"></div></div>
+  <p class="season-note">W. Murcott windows refer to the 2027 season. Satsuma, Tango and Orri mandarins and dried ginger and turmeric are available on request.</p>
 </section>
 
 <!-- CERTIFICATIONS -->
@@ -404,32 +445,46 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); letter-spacing: 0.05em
     <div class="cert-text">
       <div class="section-label">Certifications</div>
       <h2>The documentation<br>your auditors<br><em>require.</em></h2>
-      <p>All Good Hope Produce supply chains operate under internationally recognized certification frameworks. Every shipment includes certificates of analysis, phytosanitary documentation, and full traceability records — before you request them.</p>
+      <p>Certifications differ by product, so we state exactly which apply to each line. Every shipment includes a phytosanitary certificate and full traceability records — before you request them.</p>
     </div>
-    <div class="cert-grid">
-      <div class="cert-block">
-        <div class="cb-name">Global G.A.P.</div>
-        <div class="cb-desc">Good Agricultural Practices certified across all growing operations</div>
+    <div class="cert-groups">
+      <div class="cert-group-title">Ginger &amp; Turmeric</div>
+      <div class="cert-grid">
+        <div class="cert-block">
+          <div class="cb-name">USDA Organic</div>
+          <div class="cb-desc">US National Organic Program certified</div>
+        </div>
+        <div class="cert-block">
+          <div class="cb-name">EU Organic</div>
+          <div class="cb-desc">Regulation (EU) 2018/848 certified</div>
+        </div>
+        <div class="cert-block">
+          <div class="cb-name">Canada Organic</div>
+          <div class="cb-desc">COR — Canada Organic Regime certified</div>
+        </div>
+        <div class="cert-block">
+          <div class="cb-name">GlobalG.A.P.</div>
+          <div class="cb-desc">Good Agricultural Practices certified</div>
+        </div>
+        <div class="cert-block">
+          <div class="cb-name">GRASP</div>
+          <div class="cb-desc">Social practice assessment — workers' health, safety and welfare</div>
+        </div>
+        <div class="cert-block">
+          <div class="cb-name">Lab Analysis</div>
+          <div class="cb-desc">Analysis by Groen Agro Control</div>
+        </div>
       </div>
-      <div class="cert-block">
-        <div class="cb-name">GRASP</div>
-        <div class="cb-desc">Social responsibility verification — labor standards compliance</div>
-      </div>
-      <div class="cert-block">
-        <div class="cb-name">EU Organic</div>
-        <div class="cb-desc">Regulation 2018/848 · Certified by Kiwa</div>
-      </div>
-      <div class="cert-block">
-        <div class="cb-name">USDA NOP</div>
-        <div class="cb-desc">US National Organic Program certified</div>
-      </div>
-      <div class="cert-block">
-        <div class="cb-name">Canada Organic</div>
-        <div class="cb-desc">COR — Canada Organic Regime certified</div>
-      </div>
-      <div class="cert-block">
-        <div class="cb-name">Phytosanitary</div>
-        <div class="cb-desc">Registration and certificate issued per shipment</div>
+      <div class="cert-group-title">Mandarins &amp; Goldenberries</div>
+      <div class="cert-grid">
+        <div class="cert-block">
+          <div class="cb-name">SENASA Registration</div>
+          <div class="cb-desc">Exported under Peru's national plant-health authority registration</div>
+        </div>
+        <div class="cert-block">
+          <div class="cb-name">Phytosanitary</div>
+          <div class="cb-desc">Phytosanitary certificate issued per shipment</div>
+        </div>
       </div>
     </div>
   </div>
