@@ -9,6 +9,7 @@ Local path: C:\Users\krevi\OneDrive - MAK Insights\Projects\goodhope-produce\
 index.html, ginger.html, turmeric.html, mandarins.html, goldenberry.html
 ginger-datasheet.pdf, turmeric-datasheet.pdf, mandarin-murcott-datasheet.pdf,
 mandarin-malvacea-datasheet.pdf, goldenberry-datasheet.pdf
+privacy.html, 404.html, sitemap.xml, robots.txt
 
 ## Brand colors
 Forest green #1B3A2A, Gold #C8860A, Parchment #FAF6EE
