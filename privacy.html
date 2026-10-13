@@ -27,6 +27,10 @@
   body { font-family: 'DM Sans', sans-serif; background: #FAF6EE; color: #1A1208; line-height: 1.7; font-variant-numeric: lining-nums; }
   header { background: #0D2419; padding: 20px 24px; }
   header a { font-family: 'Cormorant Garamond', serif; font-size: 15px; letter-spacing: 0.15em; text-transform: uppercase; color: #F0B830; text-decoration: none; }
+  header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; }
+  header nav { display: flex; gap: 22px; flex-wrap: wrap; }
+  header nav a { font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.12em; color: rgba(255,255,255,0.8); }
+  header nav a:hover { color: #F0B830; }
   main { max-width: 720px; margin: 0 auto; padding: 56px 24px 72px; }
   h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(38px, 8vw, 54px); line-height: 1.1; margin-bottom: 8px; }
   .updated { font-size: 13px; color: #8a7d66; margin-bottom: 36px; }
@@ -51,10 +55,22 @@
     padding: 12px 18px; min-height: 44px; cursor: pointer; border: 1px solid #F0B830; }
   .cc-accept { background: #F0B830; color: #1A1208; }
   .cc-decline { background: transparent; color: #FAF6EE; }
+
+  /* ── 2026-10-12 legibility pass ── */
+  main h2 { color: #976508; }
+  .updated { color: #7a6e5a; }
+  @media (max-width: 768px) {
+    footer nav { row-gap: 0; }
+    footer nav a { display: inline-block; padding: 12px 0; }
+    header nav a { display: inline-block; padding: 12px 0; }
+  }
+  /* ── end legibility pass ── */
 </style>
 </head>
 <body>
-<header><a href="index.html">Good Hope Produce</a></header>
+<header><a href="index.html">Good Hope Produce</a>
+  <nav class="site-nav" aria-label="Main"><a href="index.html#products">Products</a><a href="index.html#certifications">Certifications</a><a href="index.html#contact">Contact</a></nav>
+</header>
 <main>
   <h1>Privacy Notice</h1>
   <p class="updated">Last updated: 12 October 2026</p>
