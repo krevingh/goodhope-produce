@@ -1,5 +1,5 @@
 # Good Hope Produce
-Client: Inversiones Good Hope SAC
+Client: Good Hope Produce
 Principals: Ivan Neira (Managing Director) and Marc Krevinghaus (Export Director)
 Contact: info@goodhopeproduce.com
 GitHub: https://github.com/krevingh/goodhope-produce
