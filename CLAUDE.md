@@ -20,6 +20,14 @@ shades in each page's "2026-10-12 legibility pass" CSS block (e.g. gold text #8E
 v02 (issued 2026-10-07). Built from Ivan's sheets; footer QR links to the product page
 with ?utm_source=datasheet&utm_medium=pdf&utm_content=<product>.
 
+## Box QR short links
+/Q/CA/ (Canada), /Q/US/ (United States), /Q/EU/ (Europe). Uppercase on purpose: smaller,
+sturdier QR codes on printed boxes and stickers (shared goldenberry/blueberry box).
+Each forwards to the home page with 9 tracking tags (utm_source=box, utm_content=market-xx,
+utm_id=box-xx-r1 = print run 1). Keep these folders forever: they are printed on boxes.
+To repoint a printed code, edit Q/<CODE>/index.html, never delete it. 404.html forwards
+lowercase /q/ca to /Q/CA/.
+
 ## Fonts
 Cormorant Garamond, Lora, DM Sans
 

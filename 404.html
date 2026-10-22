@@ -50,5 +50,10 @@
     <li><a href="https://wa.me/51996288241" target="_blank" rel="noopener">WhatsApp +51 996 288 241</a></li>
   </ul>
 </main>
+<script>
+/* Box QR short links are uppercase (/Q/CA/, /Q/US/, /Q/EU/). Forward typed lowercase or slash-less versions. */
+(function () { var p = location.pathname, m = p.match(/^\/q\/([a-z]+)\/?$/i);
+  if (m && p !== '/Q/' + m[1].toUpperCase() + '/') location.replace('/Q/' + m[1].toUpperCase() + '/' + location.search); })();
+</script>
 </body>
 </html>
